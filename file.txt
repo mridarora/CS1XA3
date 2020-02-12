@@ -1,3 +1,0 @@
-chicken
-crocodile
-pig
