@@ -1,5 +1,5 @@
 # CS 1XA3 Project 01 - **aroram15**
-### 1. Usage
+##  Usage
        1.1 Execute this scrip with:
            chmod +x CS1XA3/Project01/project_analyze.sh
            ./CS1XA3/Project01/project_analyze
