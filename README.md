@@ -28,5 +28,11 @@
                              by the user.
        4.2 **Execution**   : This feature can be executed by entering 3. as the first input when prompted to do so and                              
                              entering the extension of the file on the second attempt. 
+                             
+### 5. Custome Feature
+       5.1 First custom feature will incorporate security feature in project_analyze.sh file. If the user enters the correct
+           password, only then he/she will be allowed to execute the file. Also the user will have an option to change the 
+           password.
+       5.2 
        
 ###### ***Note*** All features will have statements giving user the instructions on the type of input the user can enter.
