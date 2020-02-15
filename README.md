@@ -11,4 +11,4 @@
                              which have *#FIXME* word in the last line of the file
        2.2 **Execution**   : This feature can be executed by entering 1. as the input arguement as 
                              and when the user gets the prompt.
-       2.3 **References**  : [GitHub](http://github.com)
+       2.3 **References**  : http://github.com - automatic!
