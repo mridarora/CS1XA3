@@ -28,4 +28,4 @@
        4.2 **Execution**   : This feature can be executed by entering 3. as the first input when prompted to do so and                              
                              entering the extension of the file on the second attempt. 
        
-       ***Note*** All features will have statements giving user the instructions on the type of input the user can enter.
+###### ***Note*** All features will have statements giving user the instructions on the type of input the user can enter.
