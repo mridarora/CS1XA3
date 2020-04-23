@@ -1,9 +1,9 @@
 # CS 1XA3 Project03 - aroram15
 
 ## Usage
-   Install conda with 
+   1.Install conda with 
       the environment.yml file provided in Project03 foler, where manage.py is present.
-   Login with testuser and password
+   2.Login with testuser and password
   
   
 ## Custom Javascript Code
