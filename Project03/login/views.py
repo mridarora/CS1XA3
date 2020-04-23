@@ -60,10 +60,10 @@ def signup_view(request):
     -------
       out : (HttpRepsonse) - renders signup.djhtml
     """
-    form = None
+    form = UserCreationForm()
 
     # TODO Objective 1: implement signup view
 
-    context = { 'signup_form' : form }
+    context = { 'form' : form }
 
     return render(request,'signup.djhtml',context)

@@ -3,5 +3,8 @@
 {% block title %}Signup Page{% endblock %}
 
 {% block middle_column %}
-    <!-- TODO Objective 1: implement signup form -->
+	<form method="POST" class="form-group">
+		{{form}}
+		<button type="submit class="btn btn-success">Register</button>
+	</form>
 {% endblock %}
