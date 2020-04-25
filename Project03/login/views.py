@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
-
+# from .forms import ContactForm
 from social import models
 
 def login_view(request):
@@ -60,10 +60,21 @@ def signup_view(request):
     -------
       out : (HttpRepsonse) - renders signup.djhtml
     """
-    form = UserCreationForm()
-
     # TODO Objective 1: implement signup view
 
-    context = { 'form' : form }
+    form = AuthenticationForm(request.POST)
+    context = { 'signup_form' : form }
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']        
+        models.UserInfo.objects.create_user_info(username=username,password=password)
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request,user)
+            request.session['failed'] = False
+            return redirect('social:messages_view')
+        else:
+            request.session['failed'] = True
 
     return render(request,'signup.djhtml',context)
