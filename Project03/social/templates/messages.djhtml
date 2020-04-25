@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'social_base.djhtml' %}
 
 {% block title %}Personal Page{% endblock %}
@@ -71,3 +72,78 @@
     </script>
     <script src="{% static 'messages.js' %}"></script>
 {% endblock %}
+=======
+{% extends 'social_base.djhtml' %}
+
+{% block title %}Personal Page{% endblock %}
+
+{% block middle_column %}
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h6 class="w3-opacity">Share Your Stupid Thoughts!</h6>
+              <p id="post-text" contenteditable="true" class="w3-border w3-padding">Status: Feeling Like A Sentient Rock</p>
+              <button type="button" id="post-button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO Objective 9: Display Posts using posts list -->
+        {% load static %}
+            {% for post in posts %}
+            <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+              <img src="{% static 'avatar.png'  %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+              <span class="w3-right w3-opacity">{{ post.timestamp }}</span>
+              <h4 class="post-user">{{ post.owner.employment }}</h4><br>
+              <p>{{ post.content }}</p>
+              <hr class="w3-clear">
+
+              <!-- TODO Objective 10: Add Post id and likes count -->
+              {% if post.already_liked == 1 %}
+                  <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom w3-disabled" id="{{ post.id }}">
+                          <i class="fa fa-thumbs-up"></i>  Like</button>
+              {% else %}
+                  <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom like-button" id="{{ post.id }}">
+                          <i class="fa fa-thumbs-up"></i>  Like</button>
+              {% endif %}
+                      
+              <span class="w3-button w3-theme-d1 w3-margin-bottom">{{ post.post_counts }} Likes</span>
+              </div>
+            {% endfor %}
+        
+
+      <div class="w3-container">
+          <p><button id="more-button" class="w3-button w3-block w3-theme-l4">More {{ rest_posts }}</button></p>
+      </div>
+{% endblock %}
+
+{% block right_column %}
+    <!-- TODO Objective 7: use user_info object to render friends -->
+      {% for friend in all_friend %}
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Friend</p>
+          {% load static %}
+          <img src="{% static 'avatar.png'  %}" alt="Avatar" style="width:50%"><br>
+          <h4>{{ friend.user }}</h4>
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+{% endblock %}
+
+{% block script %}
+    {% load static %}
+    <script>
+     $.ajaxSetup({
+         headers: { "X-CSRFToken": '{{csrf_token}}' }
+     });
+     like_post_url = "{% url 'social:like_view' %}";
+     post_submit_url = "{% url 'social:post_submit_view' %}";
+     more_post_url = "{% url 'social:more_post_view' %}";
+    </script>
+    <script src="{% static 'messages.js' %}"></script>
+{% endblock %}
+>>>>>>> project03
