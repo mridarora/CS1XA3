@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """Project03 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -42,4 +41,3 @@ urlpatterns = [
     path('e/aroram15/', include('login.urls')),
     path('e/aroram15/social/', include('social.urls')),
 ]
->>>>>>> project03

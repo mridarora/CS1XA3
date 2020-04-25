@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for Project03 project.
 
@@ -252,4 +251,3 @@ STATIC_ROOT = '/home/aroram15/public_html/static/'
 STATICFILES_DIRS = [
                  os.path.join(BASE_DIR, "static"),
                  ]
->>>>>>> project03
