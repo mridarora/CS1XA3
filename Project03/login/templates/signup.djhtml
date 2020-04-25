@@ -1,0 +1,25 @@
+{% extends 'base.djhtml' %}
+
+{% block title %}Signup Page{% endblock %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'w3login.css' %}">
+{% endblock %}
+
+{% block middle_column %}
+
+  <form  method="post" action="{% url 'login:signup_view' %}">
+      {% csrf_token %}
+      
+    <div class="container">
+        {{ signup_form }}
+        <button type="submit">Sign Up</button>
+    </div>
+
+    
+  </form>
+
+{% endblock %}
+
+
